@@ -99,13 +99,13 @@ section.hero article .btns a{
     text-decoration: none;
     text-transform: capitalize;
 }
-section.hero article .btns a[href="login.html"]{
+section.hero article .btns a[href="./private/structure/login.html"]{
     color: var(--whitesmoke);
     padding: 10px 20px;
     background-color: var(--sky-blue);
     margin-right: 30px;
 }
-section.hero article .btns a[href="signup.html"]{
+section.hero article .btns a[href="./private/structure/signup.html"]{
     color: var(--sky-blue);
     padding: 10px 20px;
     background-color: var(--whitesmoke);
