@@ -1,0 +1,91 @@
+/* ************************************************************************************ */
+                                            /* LOADING ANIMATION */
+/* ************************************************************************************ */
+:root{
+    --heading: 2.2rem;
+    --subheading: 1.6rem;
+    --font1A: sans-serif;
+    --fontweight: bold;
+    --primarycolor1: #d9e6f5;
+    --primarycolor2: #032853;
+    --primarycolor3: #68adfc;
+    --mediaparagraph: 1.2rem;
+    --paragraphs:1.4rem;
+
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primarycolor2);
+    z-index: 110;
+}
+
+#loader.page_ready{
+    display: none;
+}
+
+#loader::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 5px solid var(--primarycolor1);
+    border-top: 5px solid var(--primarycolor2);
+    border-radius: 50%;
+    animation: loading_spin .5s ease infinite;
+}
+#loader::after{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--primarycolor1);
+    border-top: 5px solid var(--primarycolor2);
+    border-radius: 50%;
+    animation: loading_spin .5s ease infinite reverse;
+}
+@media screen and (max-width:600px) {
+    #loader::before{
+        border: 3px solid var(--primarycolor1);
+        border-top: 3px solid var(--primarycolor2);
+        animation: loading_spin .5s ease infinite;
+    }
+    #loader::after{
+        border: 3px solid var(--primarycolor1);
+        border-top: 3px solid var(--primarycolor2);
+        animation: loading_spin .5s ease infinite reverse;
+    }
+}
+@keyframes loading_spin {
+    10%{transform: rotate(36deg);}
+    20%{transform: rotate(72deg);}
+    30%{transform: rotate(108deg);}
+    40%{transform: rotate(114deg);}
+    50%{transform: rotate(180deg);}
+    60%{transform: rotate(216deg);}
+    70%{transform: rotate(252deg);}
+    80%{transform: rotate(288deg);}
+    90%{transform: rotate(324deg);}
+    100%{transform: rotate(360deg);}
+}
+
+/* ************************************************************************************ */
+                                    /* LOADING ANIMATION */
+/* ************************************************************************************ */

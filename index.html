@@ -12,9 +12,27 @@
      <link rel="stylesheet" href="./private/styles/index.css">
      <link rel="stylesheet" href="./private/styles/navigations.css">
      <link rel="stylesheet" href="./private/styles/index@media.css">
+     <link rel="stylesheet" href="./private/styles/loader.css">
     <title>index</title>
 </head>
 <body>
+
+    <!-- loading animation -->
+    <div id="loader"></div>
+    <script>
+        load_page();
+        unload_page();
+        function load_page(){
+            window.addEventListener('load', ()=>{
+                document.getElementById('loader').classList.add('page_ready');
+            });
+        }
+        function unload_page(){
+            window.addEventListener('unload', ()=>{
+                document.getElementById('loader').classList.add('page_ready');
+            });
+        }
+    </script>
 
     <!-- all navigations -->
     <header>
