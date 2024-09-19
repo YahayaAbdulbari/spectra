@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+
+    --White: #ffffff;
+    --whitesmoke: #f0eeee;
+    --black: #1a1a1a;
+    --darkGray: #232323;
+    --lightGray: #626262;
+    --my-font: "Roboto",sans-serif;
+    --sky-blue: #006eff;
+    --navy-blue: #000041;
+    --valid: #00ff00;
+    --invalid: red;
+    --warning: yellow;
+
+}
+
+/* *******************media query***************** */
+@media screen and (max-width:600px) {
+
+    section.hero .img-frame{
+        width: 100%;
+        height: 35vh;
+    }
+    
+    section.hero .img-frame img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    section.hero article{
+        position: static;
+        width: 100%;
+        height: 100%;
+        padding: 20px 10px;
+    }
+
+    section.hero article h2{
+        color: var(--black);
+        font-size: 1.8rem;
+        text-transform: capitalize;
+    }
+    
+    section.hero article h4{
+        color: var(--black);
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+    }
+    
+    section.hero article h2,h4{
+        text-shadow: .5px .5px 2px var(--sky-blue);
+    }
+    
+    section.hero article p{
+        color: var(--black);
+        font-size: 1rem;
+        margin-top: 20px;
+        line-height: 20px;
+    }
+
+    section.hero article .btns{
+        margin-bottom: 20px;
+    }
+
+    section.hero article .btns a{
+        font-size: 1.2rem;
+    }
+
+    section.hero article .btns a[href="login.html"]{
+        margin-right: 10px;
+    }
+
+    section.hero article .btns a[href="signup.html"]{
+        background-color: var(--White);
+        border: .5px solid var(--sky-blue);
+    }    
+    
+}
+
+@media screen and (max-width:600px) {
+
+    .about{
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+    }
+    
+    .about .img-frame,article{
+        width: 100vw;
+        height: auto;
+    }
+
+    .about .img-frame{
+        height: 40vh;
+    }
+    
+    .about article{
+        padding: 20px;
+        padding-bottom: 40px;
+    }
+    
+    .vision{
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .unknow-section .wrapper{
+        grid-template-columns: 1fr;
+    }
+    .wrapper{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .help-info-section .tittle{
+        width: 95vw;
+    }
+
+    .help-info-section .help-info{
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

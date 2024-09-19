@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google font roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- styles links -->
+    <link rel="stylesheet" href="../../private/bootstrap5/css/all.css">
+    <title>topNavigation</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root{
+
+            --White: #ffffff;
+            --whitesmoke: #f0eeee;
+            --black: #1a1a1a;
+            --darkGray: #232323;
+            --lightGray: #626262;
+            --my-font: "Roboto",sans-serif;
+            --sky-blue: #006eff;
+            --navy-blue: #000041;
+            --valid: #00ff00;
+            --invalid: red;
+            --warning: yellow;
+
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            background-color: var(--whitesmoke);
+            font-family: var(--my-font);
+        }
+
+        /* ************************************************************************************* */
+                                     /* ALL NAVIGATIONS */
+        /* ************************************************************************************* */
+
+        header{
+            width: 100%;
+            height: 90px;
+            background-color: var(--sky-blue);
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            z-index: 99;
+        }
+
+        header .tittle{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header .tittle img{
+            width: 90px;
+            height: 100%;
+        }
+
+        header .tittle .name{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .tittle .name h1{
+            color: var(--navy-blue);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px var(--whitesmoke);
+        }
+        header .tittle .name p{
+            font-size: 1.6rem;
+            color: var(--whitesmoke);
+        }
+
+        header .tittle .toggle-btn{
+            width: 5%;
+            height: 100%;
+            color: var(--navy-blue);
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header .tittle .toggle-btn i{
+            position: absolute;
+            padding: 10px;
+            box-shadow: 0 0 2px 2px var(--navy-blue);
+            transition: .5s;
+            cursor: pointer;
+        }
+
+        /* side navigation links */
+        aside{
+            height: 90vh;
+            width: 0vw;
+            background-color: var(--black);
+            position: fixed;
+            margin-top: 90px;
+            z-index: 98;
+            transition: 1.2s;
+        }
+
+        aside.open{
+            width: 30vw;
+            overflow: hidden;
+        }
+
+        aside nav{
+            width: 100%;
+            height: auto;
+            text-transform: capitalize;
+            overflow: hidden;
+        }
+
+        aside nav h2{
+            color: var(--sky-blue);
+            font-size: 1.8rem;
+            padding: 30px;
+            background-color: var(--black);
+            text-wrap: nowrap;
+        }
+
+        aside nav ul{
+            width: 100%;
+        }
+
+        aside nav ul a li{
+            width: 100%;
+            height: auto;
+            list-style: none;
+            border-bottom: 1px solid var(--lightGray);
+            text-wrap: nowrap;
+            padding: 15px 0;
+            font-size: 1.3rem;
+        }
+        aside nav ul a li.active{
+            color: var(--valid);
+        }
+
+        aside nav ul a{
+            width: 100%;
+            height: 100%;
+            color: var(--whitesmoke);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        aside nav a li i{
+            margin-right: 15px;
+            margin-left: 20px;
+        }
+
+        /* ***************MEDIA QUERY************* */
+        @media screen and (max-width:600px) {
+
+            header{
+                height: 70px;
+            }
+
+            header .tittle img{
+                width: 70px;
+                height: 100%;
+            }
+
+            header .tittle .name{
+                width: 75vw;
+                margin-left: 2px;
+            }
+
+            header .tittle .name h1{
+                font-size: 1.8rem;
+            }
+            header .tittle .name p{
+                font-size: 1.1rem;
+                color: var(--whitesmoke);
+                text-align: center;
+            }
+
+            header .tittle .toggle-btn{
+                width: 65px;
+                height: 100%;
+                font-size: 1.6rem;
+            }
+
+            /* side navigation links */
+
+            aside{
+                margin-top: 70px;
+            }
+
+            aside.open{
+                width: 100vw;
+                overflow: hidden;
+            }
+
+            aside nav h2{
+                font-size: 1.4rem;
+                padding: 20px 30px;
+            }
+
+            aside nav ul a li{
+                width: 100%;
+                padding: 15px 0;
+                font-size: 1.1rem;
+
+            }
+
+        }
+
+        /* bottom navigation */
+        @media screen and (max-width:600px) {
+            .bottom-nav{
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                height: 70px;
+                background-color: var(--sky-blue);
+                overflow: hidden;
+                z-index: 99;
+                transition: 1s;
+            }
+            .bottom-nav.close{
+                height: 0;
+            }
+            .bottom-nav nav{
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2px;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 0;
+            }
+
+            .bottom-nav nav a{
+                grid-column: span 1;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                text-decoration: none;
+                text-transform: capitalize;
+                text-wrap: nowrap;
+                color: var(--black);
+                font-weight: bold;
+            }
+            .bottom-nav nav a i{
+                font-size: 1.6rem;
+                color: var(--whitesmoke);
+                text-shadow: 2px 2px 1px var(--lightGray);
+            }
+            .bottom-nav nav a.active{
+                color: var(--valid);
+            }
+
+            .bottom-nav nav a .fa-message{
+                color: blue;
+            }
+        }
+
+        /* ************************************************************************************* */
+                                     /* ALL NAVIGATIONS */
+        /* ************************************************************************************* */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="tittle">
+            <img src="../../images/library8.jpg" alt="company-logo">
+            <div class="name">
+                <h1>spectra</h1>
+            <p>The wide range of resources</p>
+            </div>
+            <div class="toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- side navigation links -->
+    <aside class="aside">
+        <nav>
+            <h2>side menu</h2>
+            <ul>
+                <a href="#"><li class="active"><i class="fa-solid fa-house"></i>home</li></a>
+                <a href="#"><li><i class="fa-solid fa-lock-open"></i>login</li></a>
+                <a href="#"><li><i class="fa-solid fa-user-lock"></i>sign-up</li></a>
+                <a href="#"><li><i class="fa-solid fa-dashboard"></i>dashboard</li></a>
+                <a href="#"><li><i class="fa-solid fa-users-gear"></i>help</li></a>
+                <a href="#"><li><i class="fa-solid fa-building"></i>about</li></a>
+                <a href="#"><li><i class="fa-solid fa-phone"></i>contact support</li></a>
+                <a href="#"><li><i class="fa-solid fa-users"></i>comunity</li></a>
+                <a href="#"><li><i class="fa-solid fa-user-shield"></i>privacy policy</li></a>
+            </ul>
+        </nav>
+    </aside>
+    <section class="bottom-nav">
+        <nav>
+            <a href="#" class="active"><i class="fa-solid fa-house"></i>home</a>
+            <a href="#"><i class="fa-solid fa-user-alt"></i>profile</a>
+            <a href="#"><i class="fa-solid fa-users-gear"></i>help</a>
+            <a href="#"><i class="fa-solid fa-building"></i>about</a>
+            <a href="#"><i class="fa-solid fa-message"></i>chart</a>
+        </nav>
+    </section>
+
+    <script>
+
+        var aside = document.querySelector('.aside');
+        var bar = document.querySelector('.fa-bars');
+        var xmark = document.querySelector('.fa-xmark');
+        var bottom_nav = document.querySelector('.bottom-nav');
+
+        xmark.style.display='none';
+
+        bar.addEventListener('click', ()=>{
+            opensidebar();
+        });
+
+        xmark.addEventListener('click', ()=>{
+            closesidebar();
+        });
+
+        function opensidebar(){
+            bar.style.display='none';
+            xmark.style.display='block';
+            aside.classList.add('open');
+            bottom_nav.classList.add('close');
+        }
+
+        function closesidebar(){
+            bar.style.display='block';
+            xmark.style.display='none';
+            aside.classList.remove('open');
+            bottom_nav.classList.remove('close');
+        }
+
+    </script>
+    
+</body>
+</html>
